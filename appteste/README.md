@@ -34,6 +34,11 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
         <img src="https://avatars.githubusercontent.com/u/98241441?v=4" width="100px;" alt="Foto de Heber Dsouza no GitHub"/><br>
         <sub>
           <b>Lourenço De Souza</b>
+          <span title="Project Management">📆</span>
+          <span title="Code">💻</span>
+          <span title="Documentation">📖</span>
+          <span title="Ideas & Planning">🤔</span>
+          <span title="Testing">⚠</span>
         </sub>
       </a>
     </td>
