@@ -33,7 +33,7 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
       <a href="https://github.com/Heber-Dsouza">
         <img src="https://avatars.githubusercontent.com/u/98241441?v=4" width="100px;" alt="Foto de Heber Dsouza no GitHub"/><br>
         <sub>
-          <b>Heber Dsouza</b>
+          <b>Lourenço De Souza</b>
         </sub>
       </a>
     </td>
