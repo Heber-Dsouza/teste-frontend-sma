@@ -32,7 +32,7 @@ const LogoContainer = styled(Button)`
   }
 `
 
-const pages = ['Fórum', 'Albums', 'ToDo List'];
+const pages = ['Fórum', 'Álbums', 'ToDo List'];
 
 
 const LeftSide = () => {
@@ -49,7 +49,7 @@ const LeftSide = () => {
 
   return (
           <>
-            <LogoContainer>
+            <LogoContainer sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
               <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
               <CustomTypography
                 variant="h6"
