@@ -1,13 +1,17 @@
 import React, {useState} from 'react'
 import styled from '@emotion/styled';
 
+import { useNavigate } from 'react-router-dom'
+import {
+  goToLoginPage,
+  goToSignupPage
+} from "../../../routes/coordinator"
+
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-// import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
@@ -26,7 +30,9 @@ const settings = ['Entrar', 'Cadastrar-se'];
 
 const RightSide = () => {
 
-  const [changeColor, setChangeColor] = useState("false")
+  const navigate = useNavigate()
+
+  const [changeColor, setChangeColor] = useState("false") //Apenas para mudar cor do ícone e letra onHover
 
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -38,13 +44,13 @@ const RightSide = () => {
     setAnchorElUser(null);
     switch (page) {
       case "Entrar":
-        // goToLoginPage(navigate)
+        goToLoginPage(navigate)
         break
       case "Cadastrar-se":
-        // goToSignupPage(navigate)
+        goToSignupPage(navigate)
         break
       default:
-        // goToLoginPage(navigate)
+        goToLoginPage(navigate)
         break
     }
   };

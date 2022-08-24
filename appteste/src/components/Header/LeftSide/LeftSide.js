@@ -1,5 +1,19 @@
-import React, {useState} from 'react'
+import React, {
+  useState, 
+  useContext
+    } from 'react'
+
 import styled from "@emotion/styled"
+
+import { GlobalStateContext } from '../../../global/context/GlobalStateContext'
+
+import { useNavigate } from 'react-router-dom'
+import {
+  goToHomePage,
+  goToForumPage,
+  goToAlbumsPage,
+  goToTodoPage
+} from "../../../routes/coordinator"
 
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -31,11 +45,13 @@ const LogoContainer = styled(Button)`
     color: ${neutralColor};
   }
 `
-
 const pages = ['Fórum', 'Álbums', 'ToDo List'];
 
-
 const LeftSide = () => {
+
+  const navigate = useNavigate()
+
+  const { guest } = useContext(GlobalStateContext)
 
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -43,13 +59,29 @@ const LeftSide = () => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (page) => {
     setAnchorElNav(null);
+    switch (page) {
+      case "Fórum":
+        goToForumPage(navigate, guest)
+        break
+      case "Álbums":
+        goToAlbumsPage(navigate, guest)
+        break
+      case "ToDo List":
+        goToTodoPage(navigate, guest)
+        break
+      default:
+        break
+    }
   };
 
   return (
           <>
-            <LogoContainer sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+            <LogoContainer 
+              sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+              onClick={() => goToHomePage(navigate)}
+            >
               <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
               <CustomTypography
                 variant="h6"
@@ -99,7 +131,7 @@ const LeftSide = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
@@ -129,7 +161,7 @@ const LeftSide = () => {
               {pages.map((page) => (
                 <CustomButton
                   key={page}
-                  onClick={handleCloseNavMenu}
+                  onClick={() => handleCloseNavMenu(page)}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {page}

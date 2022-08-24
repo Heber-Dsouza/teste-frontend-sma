@@ -7,9 +7,9 @@ const ScreenContainer = styled.div`
 
 const SignupPage = () => {
   return (
-    <diScreenContainerv>
+    <ScreenContainer>
       SignupPage
-    </diScreenContainerv>
+    </ScreenContainer>
   )
 }
 

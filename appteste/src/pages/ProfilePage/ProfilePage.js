@@ -7,9 +7,9 @@ const ScreenContainer = styled.div`
 
 const ProfilePage = () => {
   return (
-    <dScreenContaineriv>
+    <ScreenContainer>
       ProfilePage
-    </dScreenContaineriv>
+    </ScreenContainer>
   )
 }
 
