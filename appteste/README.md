@@ -29,22 +29,29 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
 ```# Versões mínimas ou superiores.
 $ node -v
 v12.19.0
+
 $ npm -v
 6.14.5
 ```
 
 - Para configurar, no GitBash digite os seguinte códigos:
 
-```# Clonar o repositório
+```
+# Clonar o repositório
 $ git clone "https://github.com/Murilohim/front-projetoCubo.git"
+
 #Entrar no diretório
 $ cd ./front-projetoCubo
+
 #Abrir projeto no VsCode ou com seu prompt de comando de preferência
 code . ||  cd ./front-projetoCubo (Passo acima) 
+
 #Com o terminal aberto rodar o comando
 $ npm install (para instalar as dependências necessárias)
+
 #Agora só rodar o projeto com o comando
 $ npm run start
+
 #Pronto projeto abrirá em seu navegador padrão
 Agora é só testar em seu navegador!
 ```
@@ -63,12 +70,12 @@ Agora é só testar em seu navegador!
         </sub>
       </a>
       <br>
-          <a title="Project Management">📆</a>
-          <a title="Code">💻</a>
-          <a title="Documentation">📖</a>
-          <a title="Ideas & Planning">🤔</a>
-          <a title="Testing">⚠</a>
-          <a title="Style">🎨</a>
+          <span title="Project Management">📆</span>
+          <span title="Code">💻</span>
+          <span title="Documentation">📖</span>
+          <span title="Ideas & Planning">🤔</span>
+          <span title="Testing">⚠</span>
+          <span title="Style">🎨</span>
     </td>
   </tr>
 </table>
