@@ -15,6 +15,7 @@ const CustomCreditsContainer = styled.span`
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  font-size: 15px;
 `
 const CreatedBy = styled.span`
   margin-right: 5px;
