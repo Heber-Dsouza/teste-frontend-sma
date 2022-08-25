@@ -45,6 +45,7 @@ const LogoContainer = styled(Button)`
     color: ${neutralColor};
   }
 `
+
 const pages = ['Fórum', 'Álbums', 'ToDo List'];
 
 const LeftSide = () => {
@@ -76,29 +77,7 @@ const LeftSide = () => {
 
   return (
           <>
-            <LogoContainer 
-              sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
-              onClick={() => goToHomePage(navigate)}
-            >
-              <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-              <CustomTypography
-                variant="h6"
-                noWrap
-                component="a"
-                sx={{
-                  mr: 2,
-                  display: { xs: 'none', md: 'flex' },
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.3rem',
-                  color: 'inherit',
-                  textDecoration: 'none',
-                }}
-              >
-                LOGO
-              </CustomTypography>
-            </LogoContainer>
-
+            {/* mobile screen */}
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size="large"
@@ -135,37 +114,63 @@ const LeftSide = () => {
                 ))}
               </Menu>
             </Box>
+            
+              <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                sx={{
+                  mr: 2,
+                  display: { xs: 'flex', md: 'none' },
+                  flexGrow: 1,
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  letterSpacing: '.3rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                }}
+              >
+                LOGO
+              </Typography>
 
-            {/* big screen */}
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-            >
-              LOGO
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
-                <CustomButton
-                  key={page}
-                  onClick={() => handleCloseNavMenu(page)}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+
+              {/* big screen */}
+              <Box sx={{ flexGrow: 1, alignItems: "center", display: { xs: 'none', md: 'flex' } }}>
+                <LogoContainer
+                  sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+                  onClick={() => goToHomePage(navigate)}
                 >
-                  {page}
-                </CustomButton>
-              ))}
-            </Box>
+                  <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                  <CustomTypography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    sx={{
+                      mr: 2,
+                      display: { xs: 'none', md: 'flex' },
+                      fontFamily: 'monospace',
+                      fontWeight: 700,
+                      letterSpacing: '.3rem',
+                      color: 'inherit',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    LOGO
+                  </CustomTypography>
+                </LogoContainer>
+
+                {pages.map((page) => (
+                  <CustomButton
+                    key={page}
+                    value={page}
+                    onClick={() => handleCloseNavMenu(page)}
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                  >
+                    {page}
+                  </CustomButton>
+                ))}
+              </Box>
           </>
   )
 }
