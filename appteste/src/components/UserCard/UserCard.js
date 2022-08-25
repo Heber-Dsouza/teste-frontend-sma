@@ -5,7 +5,9 @@ import ColoredAvatar from '../ColoredAvatar/ColoredAvatar'
 
 const MainContainer = styled.div`
   border: 1px solid green;
-  width: 160px;
+  /* width: 160px;
+  height: 200px; */
+  width: 100%;
   height: 200px;
   display: flex;
   flex-direction: column;

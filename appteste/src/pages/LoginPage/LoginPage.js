@@ -13,9 +13,13 @@ const ScreenContainer = styled.div`
   justify-content: center;
 `
 const MainContainer = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 40px auto;
   width: 80%;
+  max-width: 1200px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const LoginPage = () => {
@@ -26,7 +30,8 @@ const LoginPage = () => {
   return (
     <ScreenContainer>
       <MainContainer>
-        <UserCard />
+        {/* <UserCard /> */}
+        <GridForLogin />
       </MainContainer>
       {/* {allUsers.map((person) => {
         return(
