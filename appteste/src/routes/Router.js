@@ -25,10 +25,10 @@ const Router = () => {
         <Route index element={<HomePage />}></Route>
         <Route path='/entrar' element={<LoginPage />}></Route>
         <Route path='/cadastrar' element={<SignupPage />}></Route>
-        <Route path='/perfil/:id' element={<ProfilePage />}></Route>
-        <Route path='/forum/:id' element={<ForumPage />}></Route>
-        <Route path='/albums/:id' element={<AlbumsPage />}></Route>
-        <Route path='/todo/:id' element={<TodoPage />}></Route>
+        <Route path='/perfil' element={<ProfilePage />}></Route>
+        <Route path='/forum' element={<ForumPage />}></Route>
+        <Route path='/albums' element={<AlbumsPage />}></Route>
+        <Route path='/todo' element={<TodoPage />}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
       <Footer/>

@@ -25,34 +25,30 @@ const CustomGrid = styled(Grid)`
   }
 `
 
-const GridForLogin = ({child}) => {
+const GridForLogin = ({ usersData }) => {
+
+  const allUsers = usersData
+
   return (
     <CustomBox sx={{ flexGrow: 1 }}>
-      <CustomGrid container spacing={1} justifyContent={"flex-start"} alignItems="center" columns={{ xs: 3, sm: 4, md: 14 }}>
-        {/* <Grid item xs={12} md={2.5}>
-          {child}
-        </Grid> */}
-        <Grid item xs={12} md={2.5}>
-          <UserCard />
-        </Grid>
-        <Grid item xs={12} md={2.5}>
-          <UserCard />
-        </Grid>
-        <Grid item xs={12} md={2.5}>
-          <UserCard />
-        </Grid>
-        <Grid item xs={12} md={2.5}>
-          <UserCard />
-        </Grid>
-        <Grid item xs={12} md={2.5}>
-          <UserCard />
-        </Grid>
-        <Grid item xs={12} md={2.5}>
-          <UserCard />
-        </Grid>
-        <Grid item xs={12} md={2.5}>
-          <UserCard />
-        </Grid>
+      <CustomGrid 
+        container 
+        spacing={1} 
+        justifyContent={"flex-start"} 
+        alignItems="center" 
+        columns={{ xs: 3, sm: 4, md: 14 }}
+      >
+        {
+          allUsers.map((user) => {
+            return (
+              <Grid item xs={12} md={2.5} key={user.id}>
+                <UserCard
+                  userData={user}
+                />
+              </Grid>
+            )
+          })
+        }
       </CustomGrid>
     </CustomBox>
   )

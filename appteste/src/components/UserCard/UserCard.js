@@ -1,10 +1,18 @@
 import React from 'react'
 import styled from "@emotion/styled"
 
+import {primaryColor} from "../../constants/colors"
+import Button from '@mui/material/Button';
+
+import { useNavigate } from 'react-router-dom'
+import { goToTodoPage } from "../../routes/coordinator"
+
 import ColoredAvatar from '../ColoredAvatar/ColoredAvatar'
 
-const MainContainer = styled.div`
-  border: 1px solid green;
+const MainContainer = styled(Button)`
+  border: 1px solid ${primaryColor};
+  padding: 0;
+  border-radius: 0;
   /* width: 160px;
   height: 200px; */
   width: 100%;
@@ -20,24 +28,37 @@ const NameContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   padding: 4px;
+  width: 85%;
+  margin: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: horizontal;
   span {
     font-size: 1.5rem;
     font-weight: bolder;
   }
 `
-const UserCard = () => {
+const UserCard = ({userData}) => {
+
+  const navigate = useNavigate()
+
+  const handleLogin = (id) => {
+    goToTodoPage(navigate)
+  }
+
   return (
-    <MainContainer>
+    <MainContainer onClick={() => handleLogin(userData.id)}>
       <ImageContainer>
         <ColoredAvatar 
-          avatarName={"Lourenço"}
+          avatarName={`${userData.username}`}
         />
       </ImageContainer>
 
       <NameContainer>
-        <span>{"Lourenço"}</span>
+        <span>{`${userData.username}`}</span>
       </NameContainer>
     </MainContainer>
   )

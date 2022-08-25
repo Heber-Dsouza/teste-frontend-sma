@@ -4,7 +4,6 @@ import styled from "@emotion/styled"
 import { GlobalStateContext } from '../../global/context/GlobalStateContext'
 
 import GridForLogin from '../../components/Grids/GridForLogin/GridForLogin'
-import UserCard from '../../components/UserCard/UserCard'
 
 const ScreenContainer = styled.div`
   flex-grow: 1;
@@ -30,18 +29,10 @@ const LoginPage = () => {
   return (
     <ScreenContainer>
       <MainContainer>
-        {/* <UserCard /> */}
-        <GridForLogin />
+        <GridForLogin
+          usersData={allUsers}
+        />
       </MainContainer>
-      {/* {allUsers.map((person) => {
-        return(
-          <div key={person.id}>
-            <p>{person.name}</p>
-            <p>{person.email}</p>
-          </div>
-          
-        )
-      })} */}
     </ScreenContainer>
   )
 }

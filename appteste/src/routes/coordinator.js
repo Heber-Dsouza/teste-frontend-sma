@@ -10,18 +10,18 @@ export const goToSignupPage = (navigate) => {
   navigate('/cadastrar')
 }
 
-export const goToProfilePage = (navigate, id) => {
-  navigate(`/perfil/${id}`)
+export const goToProfilePage = (navigate) => {
+  navigate(`/perfil`)
 }
 
-export const goToForumPage = (navigate, id) => {
-  navigate(`/forum/${id}`)
+export const goToForumPage = (navigate) => {
+  navigate(`/forum`)
 }
 
-export const goToAlbumsPage = (navigate, id) => {
-  navigate(`/albums/${id}`)
+export const goToAlbumsPage = (navigate) => {
+  navigate(`/albums`)
 }
 
-export const goToTodoPage = (navigate, id) => {
-  navigate(`/todo/${id}`)
+export const goToTodoPage = (navigate) => {
+  navigate(`/todo`)
 }

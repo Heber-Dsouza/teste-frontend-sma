@@ -51,8 +51,6 @@ const LeftSide = () => {
 
   const navigate = useNavigate()
 
-  const { guest } = useContext(GlobalStateContext)
-
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -63,13 +61,13 @@ const LeftSide = () => {
     setAnchorElNav(null);
     switch (page) {
       case "Fórum":
-        goToForumPage(navigate, guest)
+        goToForumPage(navigate)
         break
       case "Álbums":
-        goToAlbumsPage(navigate, guest)
+        goToAlbumsPage(navigate)
         break
       case "ToDo List":
-        goToTodoPage(navigate, guest)
+        goToTodoPage(navigate)
         break
       default:
         break
