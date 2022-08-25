@@ -27,9 +27,10 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { neutralColor } from '../../../constants/colors';
 
 const CustomButton = styled(Button)`
+    color: ${props => props.inbuild === "true" ? "white" : "grey"};
   :hover {
     text-decoration: underline;
-    color: ${neutralColor};
+    color: ${props => props.inbuild === "true" ? neutralColor : "#91777d"}
   }
 `
 const CustomTypography = styled(Typography)`
@@ -46,7 +47,7 @@ const LogoContainer = styled(Button)`
   }
 `
 
-const pages = ['Fórum', 'Álbums', 'ToDo List'];
+const pages = ['ToDo List', 'Álbums', 'Fórum', ];
 
 const LeftSide = () => {
 
@@ -164,6 +165,7 @@ const LeftSide = () => {
                   <CustomButton
                     key={page}
                     value={page}
+                    inbuild={page === "ToDo List" ? "true" : "false"}
                     onClick={() => handleCloseNavMenu(page)}
                     sx={{ my: 2, color: 'white', display: 'block' }}
                   >

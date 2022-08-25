@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import { GlobalStateContext } from '../../global/context/GlobalStateContext'
 
 import GridForLogin from '../../components/Grids/GridForLogin/GridForLogin'
+import Loading from '../../components/Loading/Loading'
 
 const ScreenContainer = styled.div`
   flex-grow: 1;
@@ -29,9 +30,12 @@ const LoginPage = () => {
   return (
     <ScreenContainer>
       <MainContainer>
-        <GridForLogin
-          usersData={allUsers}
-        />
+        {
+          allUsers.length === 0 ? <Loading/> :
+            <GridForLogin
+              usersData={allUsers}
+            />
+        }
       </MainContainer>
     </ScreenContainer>
   )

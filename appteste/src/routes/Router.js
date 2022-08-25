@@ -16,6 +16,7 @@ import ForumPage from "../pages/ForumPage/ForumPage"
 import AlbumsPage from "../pages/AlbumsPage/AlbumsPage"
 import TodoPage from "../pages/TodoPage/TodoPage"
 import ErrorPage from "../pages/ErrorPage/ErrorPage"
+import InBuildPage from '../pages/InBuildPage/InBuildPage'
 
 const Router = () => {
   return (
@@ -26,8 +27,8 @@ const Router = () => {
         <Route path='/entrar' element={<LoginPage />}></Route>
         <Route path='/cadastrar' element={<SignupPage />}></Route>
         <Route path='/perfil' element={<ProfilePage />}></Route>
-        <Route path='/forum' element={<ForumPage />}></Route>
-        <Route path='/albums' element={<AlbumsPage />}></Route>
+        <Route path='/forum' element={<InBuildPage />}></Route>
+        <Route path='/albums' element={<InBuildPage />}></Route>
         <Route path='/todo' element={<TodoPage />}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>

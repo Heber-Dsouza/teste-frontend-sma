@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from "@emotion/styled"
+
+import { GlobalStateContext } from '../../global/context/GlobalStateContext';
 
 import {primaryColor} from "../../constants/colors"
 import Button from '@mui/material/Button';
@@ -43,9 +45,12 @@ const NameContainer = styled.div`
 `
 const UserCard = ({userData}) => {
 
+  const { setCurrentUser } = useContext(GlobalStateContext)
+
   const navigate = useNavigate()
 
   const handleLogin = (id) => {
+    setCurrentUser(id)
     goToTodoPage(navigate)
   }
 
