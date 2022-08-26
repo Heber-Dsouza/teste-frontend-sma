@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from "@emotion/styled"
 
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
+
+import { GlobalStateContext } from '../../global/context/GlobalStateContext';
 
 import { useNavigate } from 'react-router-dom'
 import { goToLoginPage } from "../../routes/coordinator"
@@ -51,15 +53,17 @@ const SignupPage = () => {
 
   const navigate = useNavigate()
 
+  const { creatingUser } = useContext(GlobalStateContext)
+
   const [form, onChange, clear] = useForm({
-    email: "",
-    username: "",
     name: "",
+    username: "",
+    email: "",
   })
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    
+    creatingUser(form)
   }
 
   return (

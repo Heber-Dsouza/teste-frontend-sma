@@ -5,6 +5,7 @@ import { BASE_URL } from "../constants/url"
 import useRequestData from '../services/useRequestData'
 
 import { funcRemove } from '../services/funcRemove'
+import { funcAdd } from '../services/funcAdd'
 
 const GlobalState = (props) => {
 
@@ -21,8 +22,32 @@ const GlobalState = (props) => {
     setDeletedUsersId([...deletedUsersId, id])
   }
 
-  CURRENT_USERS_ID = funcRemove(deletedUsersId, CURRENT_USERS_ID)
+  const [createdUsers, setCreatedUsers] = useState(null)
+  console.log(createdUsers);
 
+  const creatingUser = (user) => {
+    const id = Date.now()
+    const newUser = { id, ...user }
+    setCreatedUsers(newUser)
+    console.log(CURRENT_USERS_ID);
+  }
+  
+  // CURRENT_USERS_ID = funcAdd(createdUsers, CURRENT_USERS_ID)
+
+  const teste = (createdUsers, data) => {
+
+    const x = [...data]
+    const y = createdUsers
+    if (y !== null){
+      x.push(y)
+    }
+    return x
+  }
+
+  CURRENT_USERS_ID = teste(createdUsers, CURRENT_USERS_ID)
+  CURRENT_USERS_ID = funcRemove(deletedUsersId, CURRENT_USERS_ID)
+  
+  console.log(CURRENT_USERS_ID);
 
   const currentUserData = CURRENT_USERS_ID && CURRENT_USERS_ID.find((user) => {
     return user.id === currentUserId
@@ -46,7 +71,8 @@ const GlobalState = (props) => {
       CURRENT_USERS_ID, 
       deletedUsersId, 
       deletingUserId, 
-      findUserData 
+      findUserData,
+      creatingUser
     }}>
       {props.children}
     </GlobalStateContext.Provider>
