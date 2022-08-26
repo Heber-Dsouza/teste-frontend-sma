@@ -1,4 +1,4 @@
-<h1 align="center">:file_cabinet: Exemplo de README.md</h1>
+<h1 align="center">:file_cabinet: Projeto SMA - FrontEnd</h1>
 
 ## :memo: Descrição
 Projeto que ultiliza a api [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para simular um sistema de criação, atualização, exclusão e leitura de dados do usuário.
