@@ -1,10 +1,12 @@
 <h1 align="center">:file_cabinet: Exemplo de README.md</h1>
 
 ## :memo: Descrição
-Escreva uma descrição do seu projeto
+Projeto que ultiliza a api [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para simular um sistema de criação, atualização, exclusão e leitura de dados do usuário.
 
 ## :books: Funcionalidades
-* <b>Funcionalidade 1</b>: O que essa funcionalidade faz?
+* <b>Responsividade</b>: É possível acessar o projeto através de qualquer dispositivo pois o design foi primeiramente pensado para dispositivos móveis.
+* <b>Interação</b>: O projeto foi construído ultilizando componentes [Material UI](https://mui.com/pt/) que trazem alta interação com o usuário. 
+* <b>Diversas páginas</b>: O projeto conta com diversas páginas acessáveis, dado a ultilização da biblioteca  [React Router Dom](https://v5.reactrouter.com/web/guides/quick-start).
 
 ## 🔗 Link do deploy
 
