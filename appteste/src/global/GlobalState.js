@@ -5,7 +5,6 @@ import { BASE_URL } from "../constants/url"
 import useRequestData from '../services/useRequestData'
 
 import { funcRemove } from '../services/funcRemove'
-import { funcAdd } from '../services/funcAdd'
 
 const GlobalState = (props) => {
 
@@ -55,10 +54,13 @@ const GlobalState = (props) => {
   })
 
   const findUserData = (id) => {
+    if (CURRENT_USERS_ID) {
+      
+      return CURRENT_USERS_ID && CURRENT_USERS_ID.find((user) => {
+        return user.id === id
+      })
+    }
     
-    return CURRENT_USERS_ID && CURRENT_USERS_ID.find((user) => {
-      return user.id === id
-    })
   }
 
   const userTodo = useRequestData([], `${BASE_URL}/users/${currentUserId}/todos`)
