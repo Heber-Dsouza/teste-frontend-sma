@@ -86,3 +86,10 @@ Agora é só testar em seu navegador!
 
 ## :dart: Status do projeto
 🟢 Finalizado
+
+## Imagens
+![sma-case surge sh_(Notebook) (1)](https://user-images.githubusercontent.com/98241441/186950053-49ed9342-025a-4103-a040-1b1528bfb81b.png)
+![sma-case surge sh_(Notebook) (2)](https://user-images.githubusercontent.com/98241441/186950097-2bd019d0-c5f5-4d11-a87e-e595443b3f13.png)
+![sma-case surge sh_(Notebook) (3)](https://user-images.githubusercontent.com/98241441/186950113-3e87cc26-a029-48fd-b092-b7dd2060c5b1.png)
+![sma-case surge sh_(Notebook) (4)](https://user-images.githubusercontent.com/98241441/186950123-f5005f33-4163-4864-ba5f-d28fb76c5406.png)
+![sma-case surge sh_(Notebook)](https://user-images.githubusercontent.com/98241441/186950136-440d8b7a-372e-46f3-8d2b-505e3c7a5c9f.png)
