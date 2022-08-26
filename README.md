@@ -93,3 +93,5 @@ Agora é só testar em seu navegador!
 ![sma-case surge sh_(Notebook) (3)](https://user-images.githubusercontent.com/98241441/186950113-3e87cc26-a029-48fd-b092-b7dd2060c5b1.png)
 ![sma-case surge sh_(Notebook) (4)](https://user-images.githubusercontent.com/98241441/186950123-f5005f33-4163-4864-ba5f-d28fb76c5406.png)
 ![sma-case surge sh_(Notebook)](https://user-images.githubusercontent.com/98241441/186950136-440d8b7a-372e-46f3-8d2b-505e3c7a5c9f.png)
+![sma-case surge sh_(Xiaomi Redmi 9c) (1)](https://user-images.githubusercontent.com/98241441/186950385-cb1196fb-cbf6-4f3b-b2cf-6b4d76e69c7c.png)
+![sma-case surge sh_(Xiaomi Redmi 9c)](https://user-images.githubusercontent.com/98241441/186950397-7010ef47-31c5-4ab3-8e56-a96a91004f1a.png)
