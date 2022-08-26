@@ -85,3 +85,4 @@ Agora é só testar em seu navegador!
 </table>
 
 ## :dart: Status do projeto
+🟢 Finalizado
