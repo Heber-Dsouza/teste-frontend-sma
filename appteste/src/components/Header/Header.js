@@ -16,9 +16,8 @@ const Header = () => {
 
   const { currentUserId, } = useContext(GlobalStateContext)
 
-  
   return (
-    <AppBar position="static">
+    <AppBar position={'fixed'}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <LeftSide/>

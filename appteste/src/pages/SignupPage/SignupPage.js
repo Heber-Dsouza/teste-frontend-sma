@@ -23,7 +23,7 @@ const ScreenContainer = styled.div`
   flex-grow: 1;
 `
 const InputContainer = styled.div`
-  margin-top: 50px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   width: 80vw;

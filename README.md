@@ -57,7 +57,9 @@ Agora é só testar em seu navegador!
 ```
 
 ## :soon: Implementação futura
-* O que será implementado na próxima sprint?
+- A página de configurações do perfil está quebrando ao recarregar a página. Mesmo usando um hook protectedPage alguma função está tendo conflitos pela falta de variáveis. Corrigir o problema.
+- No momento está apenas sendo possível adicionar um usuário. Melhorar o código para que seja possível adicionar mais que apenas um usuário.
+- Páginas de Álbums e Fórum está ainda em desenvolvimento. Como nesse case o objetivo é apenas um CRUD com a tabela de usuários, deixarei para implementar essas páginas como uma possível expansão.
 
 ## :handshake: Colaboradores
 <table>

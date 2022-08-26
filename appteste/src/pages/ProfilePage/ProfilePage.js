@@ -27,6 +27,7 @@ const InputContainer = styled.div`
   max-width: 450px;
   align-items: stretch;
   margin-bottom: 20px;
+  margin-top: 100px;
 `
 const AlignButton = styled.div`
   display: flex;

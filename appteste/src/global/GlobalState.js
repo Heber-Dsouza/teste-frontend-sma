@@ -63,7 +63,7 @@ const GlobalState = (props) => {
     
   }
 
-  const userTodo = useRequestData([], `${BASE_URL}/users/${currentUserId}/todos`)
+  const userTodo = useRequestData([], `${BASE_URL}/users/${currentUserId || null}/todos`)
 
   return (
     <GlobalStateContext.Provider value={{ 
@@ -75,7 +75,8 @@ const GlobalState = (props) => {
       deletedUsersId, 
       deletingUserId, 
       findUserData,
-      creatingUser
+      creatingUser,
+      userTodo
     }}>
       {props.children}
     </GlobalStateContext.Provider>

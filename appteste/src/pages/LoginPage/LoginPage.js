@@ -24,7 +24,7 @@ const ScreenContainer = styled.div`
 `
 const MainContainer = styled.div`
   /* border: 1px solid black; */
-  margin: 40px auto;
+  margin: 80px auto;
   width: 80%;
   max-width: 1200px; 
   display: flex;
