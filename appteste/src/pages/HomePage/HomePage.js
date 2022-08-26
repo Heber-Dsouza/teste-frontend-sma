@@ -25,6 +25,9 @@ const TitleBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-device-width : 700px) {
+    width: 90%;
+  }
 `
 const CustomSpan1 = styled.span`
   font-size: 1.3rem;
@@ -70,9 +73,6 @@ const PhotoContainerY = styled.div`
     span {
       text-align: center;
     }
-`
-const CustomImgA = styled.img`
-  width: 50%;
 `
 
 const HomePage = () => {

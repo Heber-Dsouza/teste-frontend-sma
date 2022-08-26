@@ -41,10 +41,8 @@ const LeftSide = () => {
     setAnchorElNav(null);
     switch (page) {
       case "Fórum":
-        goToForumPage(navigate)
         break
       case "Álbums":
-        goToAlbumsPage(navigate)
         break
       case "ToDo List":
         goToTodoPage(navigate)
@@ -99,6 +97,7 @@ const LeftSide = () => {
                 variant="h5"
                 noWrap
                 component="a"
+                onClick={() => goToHomePage(navigate)}
                 sx={{
                   mr: 2,
                   display: { xs: 'flex', md: 'none' },
