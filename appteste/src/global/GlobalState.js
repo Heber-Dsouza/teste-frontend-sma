@@ -27,6 +27,7 @@ const GlobalState = (props) => {
 
   const creatingUser = (user) => {
     const id = Date.now()
+    setCurrentUserId(id)
     const newUser = { id, ...user }
     setCreatedUsers(newUser)
     console.log(CURRENT_USERS_ID);
@@ -34,7 +35,7 @@ const GlobalState = (props) => {
   
   // CURRENT_USERS_ID = funcAdd(createdUsers, CURRENT_USERS_ID)
 
-  const teste = (createdUsers, data) => {
+  const funcAdd = (createdUsers, data) => {
 
     const x = [...data]
     const y = createdUsers
@@ -44,7 +45,7 @@ const GlobalState = (props) => {
     return x
   }
 
-  CURRENT_USERS_ID = teste(createdUsers, CURRENT_USERS_ID)
+  CURRENT_USERS_ID = funcAdd(createdUsers, CURRENT_USERS_ID)
   CURRENT_USERS_ID = funcRemove(deletedUsersId, CURRENT_USERS_ID)
   
   console.log(CURRENT_USERS_ID);

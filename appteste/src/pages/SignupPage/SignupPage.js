@@ -1,15 +1,17 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import styled from "@emotion/styled"
 
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 
 import { GlobalStateContext } from '../../global/context/GlobalStateContext';
+import useForm from '../../hooks/useForm'
 
 import { useNavigate } from 'react-router-dom'
-import { goToLoginPage } from "../../routes/coordinator"
+import { goToLoginPage, goToTodoPage } from "../../routes/coordinator"
 
-import useForm from '../../hooks/useForm'
+import SnackNBar from "../../components/SnackNBar/SnackNBar"
+
 
 const ScreenContainer = styled.div`
   display: flex;
@@ -58,13 +60,19 @@ const SignupPage = () => {
   const [form, onChange, clear] = useForm({
     name: "",
     username: "",
-    email: "",
+    email: ""
   })
 
   const onSubmitForm = (event) => {
     event.preventDefault()
     creatingUser(form)
+    clear()
+    setOpenSB(true)
+    goToTodoPage(navigate)
   }
+
+  const [openSB, setOpenSB] = useState(false);
+
 
   return (
     <ScreenContainer>
@@ -130,6 +138,11 @@ const SignupPage = () => {
         >Login</CustomButton>
 
       </InputContainer>
+      <SnackNBar
+        message={`Usuário(a) ${form.name} criado(a) com sucesso!`}
+        openSB={openSB}
+        setOpenSB={setOpenSB}
+      />
     </ScreenContainer>
   )
 }
