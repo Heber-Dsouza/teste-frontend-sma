@@ -2,14 +2,25 @@ import React from 'react'
 import styled from "@emotion/styled"
 
 import CircularProgress from '@mui/material/CircularProgress';
+import LinearProgress from '@mui/material/LinearProgress'
+import Box from '@mui/material/Box';
 
-const CustomLoading = styled(CircularProgress)`
-  margin: 200px 0;
+const CustomBox = styled(Box)`
+  margin-top: 200px;
+`
+const CustomText = styled.span`
+  margin-top: 10px;
 `
 
 const Loading = () => {
   return (
-    <CustomLoading color='inherit' size={24}/>
+    <>
+      <CustomBox sx={{ width: '50%' }}>
+        <LinearProgress />
+      </CustomBox>
+      <CustomText>carregando...</CustomText>
+    </>
+    
   )
 }
 
