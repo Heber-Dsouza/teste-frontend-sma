@@ -12,6 +12,7 @@ import SnackNBar from '../../components/SnackNBar/SnackNBar'
 import Button from '@mui/material/Button'
 import { goToSignupPage } from '../../routes/coordinator'
 import { useNavigate } from 'react-router-dom'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 
 
 
@@ -38,6 +39,8 @@ const CustomButton = styled(Button)`
 const LoginPage = () => {
 
   const navigate = useNavigate()
+  
+  useUnprotectedPage()
 
   const { allUsers, CURRENT_USERS_ID, findUserData, deletingUserId } = useContext(GlobalStateContext)
 

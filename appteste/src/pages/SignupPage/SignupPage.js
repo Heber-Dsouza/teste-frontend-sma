@@ -9,6 +9,7 @@ import useForm from '../../hooks/useForm'
 
 import { useNavigate } from 'react-router-dom'
 import { goToLoginPage, goToTodoPage } from "../../routes/coordinator"
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 
 import SnackNBar from "../../components/SnackNBar/SnackNBar"
 
@@ -54,6 +55,8 @@ const CustomButton = styled(Button)`
 const SignupPage = () => {
 
   const navigate = useNavigate()
+  
+  useUnprotectedPage()
 
   const { creatingUser } = useContext(GlobalStateContext)
 

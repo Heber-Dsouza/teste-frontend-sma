@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 
 import { GlobalStateContext } from '../../global/context/GlobalStateContext';
 import useForm from '../../hooks/useForm';
+import useProtectedPage from '../../hooks/useProtectedPage';
 
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material'
@@ -65,6 +66,8 @@ const CustomForm = styled.form`
 const ProfilePage = () => {
 
   const { findUserData, currentUserId } = useContext(GlobalStateContext)
+
+  useProtectedPage()
 
   const [notEditing, setNotEditing] = useState(true)
 
