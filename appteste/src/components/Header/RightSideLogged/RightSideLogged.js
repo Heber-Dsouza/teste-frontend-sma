@@ -1,13 +1,14 @@
-import React, {useState} from 'react'
+import React, { useState, useContext } from 'react'
 import styled from '@emotion/styled';
+
+import { GlobalStateContext } from '../../../global/context/GlobalStateContext'
 
 import { useNavigate } from 'react-router-dom'
 import {
-  goToLoginPage,
-  goToSignupPage
+  goToHomePage,
+  goToProfilePage
 } from "../../../routes/coordinator"
 
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -15,20 +16,20 @@ import Menu from '@mui/material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
+import ColoredAvatarSmall from '../../ColoredAvatarSmall/ColoredAvatarSmall';
+
 import { neutralColor } from '../../../constants/colors';
 
-const CustomAccountCircleIcon = styled(AccountCircleIcon)`
-  color: white;
-  font-size: 30px;
-  color: ${props => props.thecolor === "true" && neutralColor};
-`
 const CustomTypography = styled(Typography)`
   color: ${props => props.thecolor === "true" && neutralColor};
+  width: 90px;
 `
 
-const settings = ['Entrar', 'Cadastrar-se'];
+const settings = ['Meu Perfil', 'Sair'];
 
-const RightSide = () => {
+const RightSideLogged = () => {
+
+  const { setCurrentUserId, currentUserData } = useContext(GlobalStateContext)
 
   const navigate = useNavigate()
 
@@ -43,11 +44,12 @@ const RightSide = () => {
   const handleCloseUserMenu = (page) => {
     setAnchorElUser(null);
     switch (page) {
-      case "Entrar":
-        goToLoginPage(navigate)
+      case "Meu Perfil":
+        goToProfilePage(navigate)
         break
-      case "Cadastrar-se":
-        goToSignupPage(navigate)
+      case "Sair":
+        setCurrentUserId(null)
+        goToHomePage(navigate)
         break
       default:
         break
@@ -55,45 +57,48 @@ const RightSide = () => {
   };
 
   return (
-    
     <>
       <Box sx={{ flexGrow: 0 }}>
         <Tooltip title="Abrir opções">
-          <IconButton 
-            onClick={handleOpenUserMenu} 
-            sx={{ p: 0 }} 
-            onMouseEnter={() => setChangeColor("true")} 
+          <IconButton
+            onClick={handleOpenUserMenu}
+            sx={{ p: 0 }}
+            onMouseEnter={() => setChangeColor("true")}
             onMouseLeave={() => setChangeColor("false")}
           >
             {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-              <CustomAccountCircleIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-              <CustomAccountCircleIcon 
-                thecolor={changeColor} 
-                sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} 
-              />
-              <CustomTypography
-                thecolor={changeColor}
-                // variant="h6"
-                noWrap
-                // component="a"
-                sx={{
-                  mr: 2,
-                  display: { xs: 'none', md: 'flex' },
-                  // fontFamily: 'monospace',
-                  // fontWeight: 100,
-                  letterSpacing: '.1rem',
-                  color: 'white',
-                  textDecoration: 'none',
-                  fontSize: "15px"
-                }}
-              >
-                SUA CONTA
-              </CustomTypography>   
+            {/* <CustomAccountCircleIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+            <CustomAccountCircleIcon
+              thecolor={changeColor}
+              sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            /> */}
+            <ColoredAvatarSmall 
+              avatarName={currentUserData && currentUserData.username}
+            />
+            <CustomTypography
+              thecolor={changeColor}
+              // variant="h6"
+              noWrap
+              // component="a"
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                // fontFamily: 'monospace',
+                // fontWeight: 100,
+                letterSpacing: '.1rem',
+                color: 'white',
+                textDecoration: 'none',
+                fontSize: "15px"
+              }}
+            >
+              {currentUserData && currentUserData.username.toUpperCase()}
+              {/* {"name"} */}
+            </CustomTypography>
           </IconButton>
         </Tooltip>
 
         <Menu
-          sx={{ mt: '30px', ml: "45px", display: { xs: 'none', md: 'flex' } }}
+          sx={{ mt: '30px', ml: "35px", display: { xs: 'none', md: 'flex' } }}
           id="menu-appbar"
           anchorEl={anchorElUser}
           anchorOrigin={{
@@ -125,7 +130,7 @@ const RightSide = () => {
                 display: 'block',
                 position: 'absolute',
                 top: 0,
-                left: 14,
+                left: 8,
                 width: 10,
                 height: 10,
                 bgcolor: 'background.paper',
@@ -196,4 +201,4 @@ const RightSide = () => {
   )
 }
 
-export default RightSide
+export default RightSideLogged

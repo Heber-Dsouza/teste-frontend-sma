@@ -6,13 +6,22 @@ import useRequestData from '../services/useRequestData'
 
 const GlobalState = (props) => {
 
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUserId, setCurrentUserId] = useState(null)
+  console.log(currentUserId);
+
+  
 
   const allUsers = useRequestData([], `${BASE_URL}/users`)
-  const userTodo = useRequestData([], `${BASE_URL}/users/${currentUser}/todos`)
+
+  const currentUserData = allUsers && allUsers.find((user) => {
+    return user.id === currentUserId
+  })
+  console.log(currentUserData && currentUserData.username);
+
+  const userTodo = useRequestData([], `${BASE_URL}/users/${currentUserId}/todos`)
 
   return (
-    <GlobalStateContext.Provider value={{ currentUser, setCurrentUser, allUsers}}>
+    <GlobalStateContext.Provider value={{ currentUserId, setCurrentUserId, allUsers, currentUserData }}>
       {props.children}
     </GlobalStateContext.Provider>
   )

@@ -30,7 +30,7 @@ const CustomButton = styled(Button)`
     color: ${props => props.inbuild === "true" ? "white" : "grey"};
   :hover {
     text-decoration: underline;
-    color: ${props => props.inbuild === "true" ? neutralColor : "#91777d"}
+    color: ${props => props.inbuild === "true" ? neutralColor : "#b59ca2"}
   }
 `
 const CustomTypography = styled(Typography)`

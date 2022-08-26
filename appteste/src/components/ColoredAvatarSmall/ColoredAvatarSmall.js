@@ -4,9 +4,10 @@ import styled from "@emotion/styled"
 import Avatar from '@mui/material/Avatar';
 
 const CustomAvatar = styled(Avatar)`
-  width: 100%;
-  height: 100%;
-  font-size: 4em;
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  font-size: 12px;
 `
 
 const stringToColor = (string) => {
@@ -30,7 +31,7 @@ const stringToColor = (string) => {
 }
 
 const stringAvatar = (name) => {
-  
+
   return {
     sx: {
       bgcolor: stringToColor(name),
@@ -39,13 +40,12 @@ const stringAvatar = (name) => {
   };
 }
 
-const ColoredAvatar = ({ avatarName }) => {
+const ColoredAvatarSmall = ({ avatarName }) => {
   return (
-      <CustomAvatar 
-        {...stringAvatar(`${avatarName}`)} 
-        variant='square'
-      />
+    <CustomAvatar
+      {...stringAvatar(`${avatarName}`)}
+    />
   )
 }
 
-export default ColoredAvatar
+export default ColoredAvatarSmall

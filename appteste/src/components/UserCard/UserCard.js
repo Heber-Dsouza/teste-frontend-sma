@@ -45,12 +45,12 @@ const NameContainer = styled.div`
 `
 const UserCard = ({userData}) => {
 
-  const { setCurrentUser } = useContext(GlobalStateContext)
+  const { setCurrentUserId } = useContext(GlobalStateContext)
 
   const navigate = useNavigate()
 
   const handleLogin = (id) => {
-    setCurrentUser(id)
+    setCurrentUserId(id)
     goToTodoPage(navigate)
   }
 

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
+
+import { GlobalStateContext } from '../../global/context/GlobalStateContext'
 
 import LeftSide from './LeftSide/LeftSide'
 import RightSide from './RightSide/RightSide'
+import RighttSideLogged from './RightSideLogged/RightSideLogged';
 
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
@@ -11,14 +14,15 @@ import Toolbar from '@mui/material/Toolbar';
 
 const Header = () => {
 
-  
+  const { currentUserId, } = useContext(GlobalStateContext)
+
   
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <LeftSide />
-          <RightSide />
+          <LeftSide/>
+          {currentUserId === null ? <RightSide /> : <RighttSideLogged />}
         </Toolbar>
       </Container>
     </AppBar>
