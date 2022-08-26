@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import styled from '@emotion/styled';
 
 import { useNavigate } from 'react-router-dom'
 import {
@@ -7,7 +6,11 @@ import {
   goToSignupPage
 } from "../../../routes/coordinator"
 
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import {
+  CustomAccountCircleIcon,
+  CustomTypography
+} from "./styled"
+
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -15,16 +18,7 @@ import Menu from '@mui/material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-import { neutralColor } from '../../../constants/colors';
 
-const CustomAccountCircleIcon = styled(AccountCircleIcon)`
-  color: white;
-  font-size: 30px;
-  color: ${props => props.thecolor === "true" && neutralColor};
-`
-const CustomTypography = styled(Typography)`
-  color: ${props => props.thecolor === "true" && neutralColor};
-`
 
 const settings = ['Entrar', 'Cadastrar-se'];
 

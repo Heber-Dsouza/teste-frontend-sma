@@ -1,11 +1,10 @@
-import React, {
-  useState, 
-  useContext
-    } from 'react'
+import React, { useState } from 'react'
 
-import styled from "@emotion/styled"
-
-import { GlobalStateContext } from '../../../global/context/GlobalStateContext'
+import {
+  CustomButton,
+  CustomTypography,
+  LogoContainer
+} from "./styled"
 
 import { useNavigate } from 'react-router-dom'
 import {
@@ -20,32 +19,11 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-import { neutralColor } from '../../../constants/colors';
 
-const CustomButton = styled(Button)`
-    color: ${props => props.inbuild === "true" ? "white" : "grey"};
-  :hover {
-    text-decoration: underline;
-    color: ${props => props.inbuild === "true" ? neutralColor : "#b59ca2"}
-  }
-`
-const CustomTypography = styled(Typography)`
-  margin-right: 0;
-`
-const LogoContainer = styled(Button)`
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  user-select: none;
-    :hover {
-    color: ${neutralColor};
-  }
-`
+
 
 const pages = ['ToDo List', 'Álbums', 'Fórum', ];
 

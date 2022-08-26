@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react'
-import styled from '@emotion/styled';
 
 import { GlobalStateContext } from '../../../global/context/GlobalStateContext'
 
@@ -8,6 +7,8 @@ import {
   goToHomePage,
   goToProfilePage
 } from "../../../routes/coordinator"
+
+import { CustomTypography } from "./styled"
 
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -18,12 +19,6 @@ import MenuItem from '@mui/material/MenuItem';
 
 import ColoredAvatarSmall from '../../ColoredAvatarSmall/ColoredAvatarSmall';
 
-import { neutralColor } from '../../../constants/colors';
-
-const CustomTypography = styled(Typography)`
-  color: ${props => props.thecolor === "true" && neutralColor};
-  width: 90px;
-`
 
 const settings = ['Meu Perfil', 'Sair'];
 

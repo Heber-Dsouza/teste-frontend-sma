@@ -1,7 +1,12 @@
 import React, {useContext, useState} from 'react'
-import styled from "@emotion/styled"
 
 import { GlobalStateContext } from '../../global/context/GlobalStateContext'
+
+import {
+  ScreenContainer,
+  MainContainer,
+  CustomButton
+} from "./styled"
 
 import GridForLogin from '../../components/Grids/GridForLogin/GridForLogin'
 import Loading from '../../components/Loading/Loading'
@@ -9,32 +14,10 @@ import ChangeIdea from './Texts/ChangeIdea'
 import DeleteDialog from '../../components/Dialogs/DeleteDialog/DeleteDialog'
 import SnackNBar from '../../components/SnackNBar/SnackNBar'
 
-import Button from '@mui/material/Button'
 import { goToSignupPage } from '../../routes/coordinator'
 import { useNavigate } from 'react-router-dom'
 import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 
-
-
-const ScreenContainer = styled.div`
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-`
-const MainContainer = styled.div`
-  /* border: 1px solid black; */
-  margin: 80px auto;
-  width: 80%;
-  max-width: 1200px; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
-const CustomButton = styled(Button)`
-  margin-top: 35px;
-`
 
 const LoginPage = () => {
 

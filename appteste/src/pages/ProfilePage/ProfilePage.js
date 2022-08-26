@@ -1,68 +1,20 @@
 import React, { useState, useContext } from 'react'
-import styled from "@emotion/styled"
 
 import { GlobalStateContext } from '../../global/context/GlobalStateContext';
 import useForm from '../../hooks/useForm';
 import useProtectedPage from '../../hooks/useProtectedPage';
 
-import { TextField } from '@mui/material';
-import { Button } from '@mui/material'
-
-import { primaryColor } from '../../constants/colors';
-
-
-const ScreenContainer = styled.div`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-`
-const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-  max-width: 450px;
-  align-items: stretch;
-  margin-bottom: 20px;
-  margin-top: 100px;
-`
-const AlignButton = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-const CustomButton = styled(Button)`
-  margin-top: 11px;
-  width: 47%;
-  font-size: 12px;
-  visibility: ${props => props.hidden && "hidden"};
-`
-const AlignCustomBr = styled.div`
-  display: flex;
-  justify-content: center;
-`
-const CustomBr = styled.div`
-  border-bottom: 1px solid ${primaryColor};
-  /* background-color: red; */
-  width: 80%;
-  margin: 25px;
-  /* height: 100px; */
-`
-const TituloTextfield = styled(TextField)`
-  margin: 0px 0px 4px 0px;
-`
-const MaxLengthTitulo = styled.span`
-  align-self: flex-end;
-  margin-right: 8px;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-`
-const CustomForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`
+import {
+  ScreenContainer,
+  InputContainer,
+  AlignButton,
+  CustomButton,
+  AlignCustomBr,
+  CustomBr,
+  TituloTextfield,
+  MaxLengthTitulo,
+  CustomForm
+} from "./styled"
 
 const ProfilePage = () => {
 
@@ -81,7 +33,6 @@ const ProfilePage = () => {
   const onSubmitForm = (event) => {
     event.preventDefault()
     setNotEditing(!notEditing)
-    console.log("");
   }
 
   return (

@@ -1,14 +1,6 @@
 import React from 'react'
-import styled from "@emotion/styled"
 
-import Avatar from '@mui/material/Avatar';
-
-const CustomAvatar = styled(Avatar)`
-  width: 30px;
-  height: 30px;
-  margin-right: 8px;
-  font-size: 12px;
-`
+import { CustomAvatar } from "./styled"
 
 const stringToColor = (string) => {
   let hash = 0;

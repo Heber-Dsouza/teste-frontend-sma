@@ -108,7 +108,7 @@ const HomePage = () => {
             <PhotoContainerY>
               <img src={Update} />
               <span>Após concluir a etapa de cadastro ou login, acesse a página Meu Perfil para mudar seus dados</span>
-              <span style={{ "color": "red", "fontSize": "14px" }} >Obs.: A api não possui um endpoint de atualizar dados, mas é possível ver uma interface de edição de dados do usuário.</span>
+              <span style={{ "color": "red", "fontSize": "14px" }} >Obs.: A api não possui um endpoint de atualizar dados, mas é possível usar a interface de edição de dados do usuário.</span>
             </PhotoContainerY>
             <PhotoContainerY>
               <img src={Delete} />

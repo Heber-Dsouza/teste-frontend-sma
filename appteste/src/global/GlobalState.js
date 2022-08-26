@@ -9,7 +9,6 @@ import { funcRemove } from '../services/funcRemove'
 const GlobalState = (props) => {
 
   const [currentUserId, setCurrentUserId] = useState(null)
-  // console.log(currentUserId);
 
   const allUsers = useRequestData([], `${BASE_URL}/users`)
   
@@ -22,14 +21,12 @@ const GlobalState = (props) => {
   }
 
   const [createdUsers, setCreatedUsers] = useState(null)
-  console.log(createdUsers);
 
   const creatingUser = (user) => {
     const id = Date.now()
     setCurrentUserId(id)
     const newUser = { id, ...user }
     setCreatedUsers(newUser)
-    console.log(CURRENT_USERS_ID);
   }
   
   // CURRENT_USERS_ID = funcAdd(createdUsers, CURRENT_USERS_ID)
@@ -47,8 +44,6 @@ const GlobalState = (props) => {
   CURRENT_USERS_ID = funcAdd(createdUsers, CURRENT_USERS_ID)
   CURRENT_USERS_ID = funcRemove(deletedUsersId, CURRENT_USERS_ID)
   
-  console.log(CURRENT_USERS_ID);
-
   const currentUserData = CURRENT_USERS_ID && CURRENT_USERS_ID.find((user) => {
     return user.id === currentUserId
   })
