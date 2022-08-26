@@ -17,7 +17,7 @@ const CustomGrid = styled(Grid)`
 
   @media screen and (min-device-width : 701px) {
       position: relative;
-      left: 5.4%;
+      left: 6%;
       margin-top: 35px;
   }
   @media screen and (max-device-width : 700px) {
@@ -30,7 +30,7 @@ const CustomGridChild = styled.div`
   margin: 0.8vh 0.5vw 0 0;
 `
 
-const GridForLogin = ({ usersData }) => {
+const GridForLogin = ({ usersData, handleClickOpen }) => {
 
   const allUsers = usersData
 
@@ -49,6 +49,7 @@ const GridForLogin = ({ usersData }) => {
               <CustomGridChild item xs={12} md={2.5} key={user.id}>
                 <UserCard
                   userData={user}
+                  handleClickOpen={handleClickOpen}
                 />
               </CustomGridChild>
             )

@@ -64,7 +64,7 @@ const NameContainer = styled.div`
     font-weight: bolder;
   }
 `
-const UserCard = ({userData}) => {
+const UserCard = ({ userData, handleClickOpen }) => {
 
   const { setCurrentUserId, deletingUserId } = useContext(GlobalStateContext)
 
@@ -77,7 +77,8 @@ const UserCard = ({userData}) => {
 
   const deleteAccount = (event, id) => {
     event.stopPropagation();
-    deletingUserId(id)
+    // deletingUserId(id)
+    handleClickOpen(id)
   }
 
   return (

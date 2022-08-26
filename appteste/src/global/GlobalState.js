@@ -27,12 +27,27 @@ const GlobalState = (props) => {
   const currentUserData = CURRENT_USERS_ID && CURRENT_USERS_ID.find((user) => {
     return user.id === currentUserId
   })
-  // console.log(currentUserData && currentUserData.username);
+
+  const findUserData = (id) => {
+    
+    return CURRENT_USERS_ID && CURRENT_USERS_ID.find((user) => {
+      return user.id === id
+    })
+  }
 
   const userTodo = useRequestData([], `${BASE_URL}/users/${currentUserId}/todos`)
 
   return (
-    <GlobalStateContext.Provider value={{ currentUserId, setCurrentUserId, allUsers, currentUserData, CURRENT_USERS_ID, deletedUsersId, deletingUserId }}>
+    <GlobalStateContext.Provider value={{ 
+      currentUserId, 
+      setCurrentUserId, 
+      allUsers, 
+      currentUserData, 
+      CURRENT_USERS_ID, 
+      deletedUsersId, 
+      deletingUserId, 
+      findUserData 
+    }}>
       {props.children}
     </GlobalStateContext.Provider>
   )
